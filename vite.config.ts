@@ -16,8 +16,9 @@ export default defineConfig({
     lib: {
       entry: path.resolve(__dirname, "packages/index.ts"),
       name: "FirebaseProvider",
-      formats: ["es", "umd", "cjs"],
-      fileName: (format) => `firebase-provider.${format}.js`,
+      fileName: 'firebase-provider',
+      // formats: ["es", "umd", "cjs"],
+      // fileName: (format) => `firebase-provider.${format}.js`,
     },
     rollupOptions: {
       external: ["react", "react-dom", "@firebase/auth", "@firebase/app"],

@@ -3,20 +3,21 @@ import React from 'react';
 import { FC, PropsWithChildren, createContext, useEffect, useState } from "react";
 
 import { FirebaseApp } from 'firebase/app';
-import { User, getAuth } from 'firebase/auth';
+import { User, getAuth, getIdToken } from 'firebase/auth';
 
 export const firebaseContext = createContext<FirebaseContextHolder | null>(null);
 
 type FirebaseContextHolder = {
     user?: User | null;
     isAuthenticated: boolean;
+    idToken?: string;
 }
 
 type Props = {
     app?: FirebaseApp
 }
 
-const FirebaseProvider: FC<PropsWithChildren<Props>> = ({ app, children }) => {
+export const FirebaseProvider: FC<PropsWithChildren<Props>> = ({ app, children }) => {
     const auth = getAuth(app);
 
     const [user, setUser] = useState<User | null>(auth.currentUser)
@@ -24,11 +25,12 @@ const FirebaseProvider: FC<PropsWithChildren<Props>> = ({ app, children }) => {
 
     // Subscribe to auth change events
     useEffect(() => {
-        const unsubscribe = auth.onAuthStateChanged((user) => {
+        const authUnsubscribe = auth.onAuthStateChanged((user) => {
             setUser(user);
         })
+        
         return () => {
-            unsubscribe()
+            authUnsubscribe()
         }
     }, [])
 

@@ -1,6 +1,6 @@
 {
   "name": "@pilab/firebase-provider",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "license": "Apache-2.0",
   "type": "module",
   "publisher": "Paal Gyula <paalgyula@paalgyula.com>",
@@ -13,12 +13,12 @@
     "build": "tsc && vite build",
     "preview": "vite preview"
   },
-  "main": "./dist/firebase-provider.umd.js",
-  "module": "./dist/firebase-provider.esm.js",
+  "main": "./dist/firebase-provider.umd.cjs",
+  "module": "./dist/firebase-provider.js",
   "exports": {
     ".": {
-      "import": "./dist/firebase-provider.esm.js",
-      "require": "./dist/firebase-provider.umd.js"
+      "import": "./dist/firebase-provider.js",
+      "require": "./dist/firebase-provider.umd.cjs"
     }
   },
   "types": "./dist/index.d.ts",
