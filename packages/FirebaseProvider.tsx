@@ -11,6 +11,7 @@ type FirebaseContextHolder = {
     user?: User | null;
     isAuthenticated: boolean;
     idToken?: string;
+    app?: FirebaseApp;
 }
 
 type Props = {
@@ -41,6 +42,7 @@ export const FirebaseProvider: FC<PropsWithChildren<Props>> = ({ app, children }
 
     return (<firebaseContext.Provider value={{
         isAuthenticated,
+        app,
         user
     }}>
         {children}
