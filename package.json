@@ -1,10 +1,20 @@
 {
   "name": "@pilab/firebase-provider",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "license": "Apache-2.0",
   "type": "module",
-  "publisher": "Paal Gyula <paalgyula@paalgyula.com>",
+  "publisher": "Nev3r Kn0wn <nn0wn@proton.me>",
+  "description": "Firebase (core) provider for React",
   "private": false,
+  "homepage": "https://github.com/pilab-dev/firebase-provider",
+  "author": {
+    "name": "Nev3r Kn0wn",
+    "email": "nn0wn@proton.me"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pilab-dev/firebase-provider.git"
+  },
   "files": [
     "dist"
   ],
@@ -23,7 +33,7 @@
   },
   "types": "./dist/index.d.ts",
   "dependencies": {
-    "firebase": "^9.19.1",
+    "firebase": "^10.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
@@ -34,6 +44,5 @@
     "typescript": "^4.9.3",
     "vite": "^4.2.1",
     "vite-plugin-dts": "^2.2.0"
-  },
-  "packageManager": "yarn@3.5.0"
+  }
 }

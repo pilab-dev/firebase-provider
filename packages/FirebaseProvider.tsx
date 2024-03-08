@@ -3,7 +3,7 @@ import React from 'react';
 import { FC, PropsWithChildren, createContext, useEffect, useState } from "react";
 
 import { FirebaseApp } from 'firebase/app';
-import { User, getAuth, getIdToken } from 'firebase/auth';
+import { User, getAuth } from 'firebase/auth';
 
 export const firebaseContext = createContext<FirebaseContextHolder | null>(null);
 
